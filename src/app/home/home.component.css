@@ -1,0 +1,18 @@
+.home-text {
+  max-width: 700px;              /* keep lines readable */
+  margin: 40px auto;             /* center horizontally with spacing on top/bottom */
+  padding: 20px;
+  text-align: center;            /* center text */
+  font-family: 'Arial', sans-serif;
+  font-size: 1.3rem;             /* slightly larger for readability */
+  line-height: 1.6;
+  color: #2c3e50;                /* dark blue-gray */
+  background-color: #f0f8ff;     /* subtle light blue background */
+  border-radius: 12px;           /* rounded corners */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* subtle shadow */
+  transition: transform 0.2s ease;
+}
+
+.home-text:hover {
+  transform: translateY(-3px);   /* tiny lift on hover for a playful effect */
+}

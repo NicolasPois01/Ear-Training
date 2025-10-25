@@ -1,0 +1,18 @@
+h1 {
+  font-family: 'Arial', 'Helvetica', sans-serif;
+  font-size: 2.8rem;       /* big and bold */
+  font-weight: 700;
+  color: #2c3e50;          /* dark blue-gray */
+  text-align: center;       /* center on the page */
+  margin-top: 30px;
+  margin-bottom: 20px;
+  letter-spacing: 1px;      /* small spacing between letters */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2); /* subtle shadow for depth */
+}
+
+/* Optional: add a gradient effect for fun */
+h1.gradient {
+  background: linear-gradient(90deg, #ff6b6b, #fbc531);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

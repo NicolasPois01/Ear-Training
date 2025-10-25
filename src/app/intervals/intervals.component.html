@@ -1,0 +1,51 @@
+<div class="interval-page">
+
+  <!-- Toggle instructions -->
+  <button class="toggle-instructions" (click)="showInstructions = !showInstructions">
+    {{ showInstructions ? 'Hide Instructions' : 'Show Instructions' }}
+  </button>
+
+  <!-- Collapsible instructions -->
+  <div class="interval-instructions" *ngIf="showInstructions">
+    <h2>How to Play</h2>
+    <ol>
+      <li>Click <strong>Play a note</strong> — the note will be highlighted in <span class="red-key">red</span> on the piano keyboard.</li>
+      <li>Click <strong>Play the second note</strong> to hear the note you need to identify.</li>
+      <li>Use the piano keyboard to <strong>guess the correct note</strong>.
+        <ul>
+          <li>If your guess is <span class="green-key">correct</span>, the key will turn green.</li>
+          <li>If it’s incorrect, try again!</li>
+        </ul>
+      </li>
+      <li>You can <strong>replay any note</strong> at any time to help find the correct interval.</li>
+    </ol>
+    <p>Practice and challenge yourself to improve your ear for intervals!</p>
+  </div>
+
+  <!-- Action buttons -->
+  <div class="action-buttons">
+    <button (click)="playNote()">Play a note</button>
+    <button (click)="replay()">Replay note</button>
+    <button (click)="generateAndPlaySecondNote()">Play the second note</button>
+    <button (click)="replaySecondNote()">Replay second note</button>
+  </div>
+
+  <!-- Piano component -->
+  <app-piano
+    [activeNote]="currentNote"
+    [correctNote]="secondNote"
+    [success]="success"
+    (clickedNote)="checkNote($event)">
+  </app-piano>
+
+  <!-- Stats -->
+  <div class="stats">
+    <div>Correct answers: {{correctAnswers}}</div>
+    <div>Wrong answers: {{wrongAnswers}}</div>
+    <div>Winrate: {{winrate}}</div>
+  </div>
+
+  <!-- Reset button -->
+  <button class="reset-button" (click)="hardReset()">Reset</button>
+
+</div>

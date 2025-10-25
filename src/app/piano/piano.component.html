@@ -1,0 +1,26 @@
+<div class="piano">
+  <ng-container *ngFor="let octave of octaves; let i = index">
+    <div class="octave" style="position: relative;">
+
+      <!-- White keys -->
+      <div *ngFor="let key of whiteKeys" class="white-key" (click)="onClickKey(key, i+1)" 
+            [class.active]="isActive(key, i+1)"
+            [class.correct] = "isCorrect(key, i+1)">
+        <span class="note-label">{{ key }}{{ i + 1 }}</span>
+      </div>
+
+      <!-- Black keys -->
+      <ng-container *ngFor="let key of blackKeys; let j = index">
+        <div *ngIf="key" 
+             (click)="onClickKey(key, i+1)"
+             class="black-key"
+             [class.active]="isActive(key, i+1)"
+             [class.correct] = "isCorrect(key, i+1)"
+             [style.left.px]="j*40 + 28">
+          <span class="note-label">{{ key }}{{ i + 1 }}</span>
+        </div>
+      </ng-container>
+
+    </div>
+  </ng-container>
+</div>

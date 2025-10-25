@@ -1,0 +1,46 @@
+.piano {
+  margin-top: 2rem;
+  display: flex;
+  user-select: none;
+}
+
+.white-key {
+  width: 40px;
+  height: 180px;
+  background: white;
+  border: 1px solid black;
+  display: inline-block;
+  position: relative;
+}
+.white-key.active {
+  background: red;
+}
+.white-key.correct {
+  background-color: green;
+}
+
+.black-key {
+  width: 28px;
+  height: 110px;
+  background: black;
+  color: white;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+}
+.black-key.active {
+  background: darkred;
+}
+.black-key.correct {
+  background-color: darkgreen;
+}
+
+.note-label {
+  position: absolute;
+  bottom: 5px;
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  pointer-events: none;
+}
